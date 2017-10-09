@@ -1,39 +1,39 @@
 <p>
-    <i>( Describe task in general )</i>
+    You have a sequence of strings, and you’d like to determine the most frequently occurring string in the sequence.
 </p>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <strong>Input: </strong> a list of strings
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> string. 
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">mostFrequent([
+        'a', 'b', 'c', 
+        'a', 'b',
+        'a'
+    ]) == 'a'
+
+mostFrequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">most_frequent([
+        'a', 'b', 'c', 
+        'a', 'b',
+        'a'
+    ]) == 'a'
+
+most_frequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
 </pre>
 {% endif %}
 </div>
