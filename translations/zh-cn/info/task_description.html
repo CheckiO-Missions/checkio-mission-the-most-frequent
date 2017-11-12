@@ -1,0 +1,39 @@
+<p>
+    你有一系列字符串，你要从中找出出现频率最高的字符串。
+</p>
+
+<p>
+    <strong>输入: </strong> 一个字符串组成的列表
+</p>
+
+<p>
+    <strong>输出: </strong> 一个字符串. 
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>举个栗子:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">mostFrequent([
+        'a', 'b', 'c', 
+        'a', 'b',
+        'a'
+    ]) == 'a'
+
+mostFrequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% else %}
+<pre class="brush: python">most_frequent([
+        'a', 'b', 'c', 
+        'a', 'b',
+        'a'
+    ]) == 'a'
+
+most_frequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% endif %}
+</div>
