@@ -10,6 +10,13 @@ function mostFrequent(data) {
 var assert = require('assert');
 
 if (!global.is_checking) {
+    console.log('Example:')
+    console.log(mostFrequent([
+        'a', 'b', 'c', 
+        'a', 'b',
+        'a'
+    ]))
+    
     assert.equal(mostFrequent([
         'a', 'b', 'c', 
         'a', 'b',
