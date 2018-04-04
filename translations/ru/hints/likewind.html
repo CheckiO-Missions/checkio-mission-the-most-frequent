@@ -19,8 +19,8 @@
         использовать метод list.count(x)<br>
         Он работает следующим образом:
         <pre class="brush: python">
-        data = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
-        data.count('a')</pre>
+data = ['a', 'a', 'c', 'd', 'e', 'e', 'a', 'b']
+data.count('a')</pre>
         data.count('a') --> 3
     </div>
 </div>
@@ -42,12 +42,12 @@
     <div class="answer">
         Код для этого вполне укладывается в однострочную функцию:
         <pre class="brush: python">
-        def most_frequent(data):
-            return max(data, key=lambda a: data.count(a))</pre>
+def most_frequent(data):
+    return max(data, key=lambda a: data.count(a))</pre>
         Которую можно записать даже проще:
         <pre class="brush: python">
-        def most_frequent(data):
-            return max(data, key=data.count)</pre>
+def most_frequent(data):
+    return max(data, key=data.count)</pre>
     </div>
 </div>
 
