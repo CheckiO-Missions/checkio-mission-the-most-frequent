@@ -1,0 +1,59 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Я совершенно не представляю, как решить эту задачу.
+    </div>
+    <div class="answer">
+        Вам необходимо найти элемент, у которого один из параметров - <b>максимальный</b> (в данном случае - частота).
+        Для подобных случаев у Python есть отличная встроенная 
+        <a href='https://docs.python.org/3/library/functions.html#max'>функция max()</a>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Как именно работает эта функция? Можно пример?
+    </div>
+    <div class="answer">
+        Допустим, у нас есть список чисел - [2, 7, 6, 14, -1, 10.5, -1, 5]. Если мы используем функцию max, то
+        в результате получим число 14 - максимальный элемент списка.
+        Код будет выглядеть так:
+        <pre class="brush: python">
+def most_frequent(data):
+    return max(data)</pre>
+    </div>
+</div>
+    
+<div class="question-answer">
+    <div class="question">
+        Но ведь нам нужно найти элемент с максимальной частотой. Что делать в этом случае?
+    </div>
+    <div class="answer">
+        Для этого нужно дополнительно использовать параметр 'key' внутри функции 'max', с помощью которого можно
+        находить не максимальный элемент по абсолютному значению, а, например, по частоте.
+        В этом случае будет полезен 
+        <a href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>метод list.count()</a>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Я могу увидеть полную версию кода?
+    </div>
+    <div class="answer">
+        Код для решения этой задачи вполне укладывается в однострочную функцию:
+        <pre class="brush: python">
+def most_frequent(data):
+    return max(data, key=lambda a: data.count(a))</pre>
+        Которую можно записать даже проще:
+        <pre class="brush: python">
+def most_frequent(data):
+    return max(data, key=data.count)</pre>
+        Данная функция будет делать именно то, что нам нужно - считать, сколько раз каждый из элементов входит в исходный
+        список (за это отвечает key=data.count), а затем сама функция max будет по этому параметру (по частоте) определять
+        нужный нам элемент.
+    </div>
+</div>    
+    
+</body>
