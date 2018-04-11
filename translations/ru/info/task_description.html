@@ -1,0 +1,37 @@
+<p>
+    У Вас есть последовательность строк и Вы хотели бы определить, какая из этих строк встречается чаще всего в данной последовательности.
+</p>
+
+<p>
+    <strong>Входные данные: </strong> a {% if interpreter.slug == "js-node" %}Array{% else %}list{% endif %} of strings.
+</p>
+
+<p>
+    <strong>Выходные данные: </strong> Строка. 
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Пример:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">mostFrequent([
+    'a', 'b', 'c', 
+    'a', 'b',
+    'a'
+]) == 'a'
+mostFrequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% else %}
+<pre class="brush: python">most_frequent([
+    'a', 'b', 'c', 
+    'a', 'b',
+    'a'
+]) == 'a'
+most_frequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% endif %}
+</div>
