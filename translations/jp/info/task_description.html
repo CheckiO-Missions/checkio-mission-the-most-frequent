@@ -1,0 +1,37 @@
+<p>
+    あなたは一連の文字列を持っていて、その中で最も多く出現する文字列を特定したいと思っています。
+</p>
+
+<p>
+    <strong>入力: </strong> 文字列の{% if interpreter.slug == "js-node" %}配列{% else %}リスト{% endif %}
+</p>
+
+<p>
+    <strong>出力: </strong> 文字列
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>例:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">mostFrequent([
+    'a', 'b', 'c',
+    'a', 'b',
+    'a'
+]) == 'a'
+mostFrequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% else %}
+<pre class="brush: python">most_frequent([
+    'a', 'b', 'c',
+    'a', 'b',
+    'a'
+]) == 'a'
+most_frequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
+</pre>
+{% endif %}
+</div>
