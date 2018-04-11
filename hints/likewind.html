@@ -1,0 +1,64 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        You should count the amount of each element in the list and find which element has
+        the largest quantity.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Could you break this explanation into smaller steps?
+    </div>
+    <div class="answer">
+        You can use
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a>
+        method for this.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Can you show me how to use it?
+    </div>
+    <div class="answer">
+        Sure.
+        <pre class="brush: python">
+        def most_frequent(data):
+            for i in data:
+                element_count = data.count(i)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        I need some help to proceed with the mission.
+    </div>
+    <div class="answer">
+        Try to create a variable, for example, 'max_count' and overwrite it every time
+        when you comparing the amounts of 2 elements and find which of them is the most frequent.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        I don't understand how to code this... Help!
+    </div>
+    <div class="answer">
+        Your code may look like this:
+        <pre class="brush: python">
+        def most_frequent(data):
+            max_count = 0
+            for i in data:
+                if data.count(i) > max_count:
+                    max_count = data.count(i)
+                    max_value = i
+            return max_value</pre>
+    </div>
+</div>
+
+</body>
