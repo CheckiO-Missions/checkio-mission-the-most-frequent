@@ -1,4 +1,4 @@
-def most_frequent(data):
+def most_frequent(data: list) -> str:
     """
         determines the most frequently occurring string in the sequence.
     """
