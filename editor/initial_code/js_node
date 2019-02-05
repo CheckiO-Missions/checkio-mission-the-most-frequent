@@ -1,7 +1,7 @@
 "use strict";
 
 function mostFrequent(data) {
-    // sums two passed arguments
+    // returns the most frequenly occuring string in the given array
 
     // your code here
     return '';
