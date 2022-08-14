@@ -1,0 +1,90 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to solve this task.
+    </div>
+    <div class="answer">
+        You need to find an element one of the parameters of which is <b>maximal</b> (in this case it’s frequency).
+        For these types of cases Python has a great built-in 
+        <a target="_blank" href='https://docs.python.org/3/library/functions.html#max'>max()</a> function.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        How exactly does this function work? Can you give an example?
+    </div>
+    <div class="answer">
+        Let’s assume you have {% if interpreter.slug == "js-node" %}an Array{% else %}a list{% endif %} of numbers - [2, 7, 6, 14, -1, 10.5, -1, 5].
+        If we use the max function, we'll get the number 14 - the maximum element
+        of the list. Code will be as follows:
+        <br>
+        <br>
+        <pre class="brush: python">
+data = [2, 7, 6, 14, -1, 10.5, -1, 5]
+max(data)
+>>> 14
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        But I need to find the element with the maximum frequency. What should I do in this case?
+    </div>
+    <div class="answer">
+        For this you need to additionally use the 'key' parameter inside the 'max'
+        function, with which you can find the maximum element not by the absolute
+        value, but, for example, by the frequency. In this case the list
+        <a target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>count()</a> method will be useful.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Can I see the full version of the code?
+    </div>
+    <div class="answer">
+        Code that solves this task fits into a one-line function:
+        <br>
+        <br>
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    return max(data, key=data.count)
+        </pre>
+        This function will do exactly what you need: count how many times each
+        element enters the input list (key=data.count is responsible for this),
+        and then the max function itself will use this parameter (the frequency)
+        to determine the required element.
+        <br>
+        <br>
+        There are a lot of other solutions you be able to see after your solution
+        passes all tests successfully. For example:
+        <br>
+        <br>
+        <pre class="brush: python">
+from statistics import mode as most_frequent
+        </pre>
+        Or the longer clear way by comparing frequencies in a loop:
+        <br>
+        <br>
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    answer = 0, ''
+    for var in set(data):
+        freq = data.count(var)
+        if  freq > answer[0]:
+            answer = freq, var
+
+    return answer[1]
+        </pre>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now. Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it!
+    </div>
+</div>
+</body>

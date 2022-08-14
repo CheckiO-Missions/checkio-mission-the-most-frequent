@@ -17,23 +17,5 @@
         <strong>举个栗子:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">mostFrequent([
-        'a', 'b', 'c', 
-        'a', 'b',
-        'a'
-    ]) == 'a'
-
-mostFrequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
-</pre>
-{% else %}
-<pre class="brush: python">most_frequent([
-        'a', 'b', 'c', 
-        'a', 'b',
-        'a'
-    ]) == 'a'
-
-most_frequent(['a', 'a', 'bi', 'bi', 'bi']) == 'bi'
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>

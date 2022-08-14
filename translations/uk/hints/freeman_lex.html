@@ -1,0 +1,93 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Я уявлення не маю, як розв'язувати цю місію.
+    </div>
+    <div class="answer">
+        Тобі потрібно знайти елемент, <b>максимальний</b> за певним параметром
+        (у випадку цієї місії - це частота в сукупності).
+        Для таких завдань Python має чудову вбудовану функцію
+        <a target="_blank" href='https://docs.python.org/3/library/functions.html#max'>max()</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Як саме ця функція працює? Чи можеш ти надати приклад?
+    </div>
+    <div class="answer">
+        Припустимо, ти маєш {% if interpreter.slug == "js-node" %}масив{% else %}список{% endif %} чисел - [2, 7, 6, 14, -1, 10.5, -1, 5].
+        Якщо ти використаєш функцію max() на ньому, то отримаєш число 14 - найбільший
+        елемент. Код матиме вигляд:
+        <br>
+        <br>
+        <pre class="brush: python">
+data = [2, 7, 6, 14, -1, 10.5, -1, 5]
+max(data)
+>>> 14
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Але мені потрібен елемент із максимальною частотою появи.
+        Що мені робити у цьому випадку?
+    </div>
+    <div class="answer">
+        Для цього тобі додатково потрібно використати параметр 'key' всередині 'max',
+        з яким ти зможеш знайти найбільший елемент не за максимальним значенням,
+        а за якимось іншим критерієм, наприклад, частотою появи. В цьому випадку
+        використай метод списку <a target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>count()</a>,
+        який якраз і повертає кількість появи елементу у сукупності.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Чи можу я побачити повну версію коду?
+    </div>
+    <div class="answer">
+        Код для розв'язку цієї місії поміщається в один рядок:
+        <br>
+        <br>
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    return max(data, key=data.count)
+        </pre>
+        Ця функція робить саме те, що тобі потрібно: рахує, скільки разів кожен 
+        елемент присутній у вхідному {% if interpreter.slug == "js-node" %}масиві{% else %}списку{% endif %}
+        (key=data.count відповідальне за це), і потім сама функція max() використовує
+        цей параметр (частоту) для визначення потрібного елемента.
+        <br>
+        <br>
+        Є багато інших розв'язків, які ти зможеш побачити коли твій розв'язок
+        успішно пройде всі тести. Наприклад:
+        <br>
+        <br>
+        <pre class="brush: python">
+from statistics import mode as most_frequent
+        </pre>
+        Або довша розгорнута версія через порівняння частот у циклі:
+        <br>
+        <br>
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    answer = 0, ''
+    for var in set(data):
+        freq = data.count(var)
+        if  freq > answer[0]:
+            answer = freq, var
+
+    return answer[1]
+        </pre>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+    </div>
+    <div class="answer">
+        Приємно це чути!
+    </div>
+</div>
+</body>
