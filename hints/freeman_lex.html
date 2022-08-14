@@ -48,14 +48,6 @@ max(data)
         <pre class="brush: python">
 def most_frequent(data: list[str]) -> str:
 
-    return max(data, key=lambda a: data.count(a))
-        </pre>
-        Which can be written even simpler:
-        <br>
-        <br>
-        <pre class="brush: python">
-def most_frequent(data: list[str]) -> str:
-
     return max(data, key=data.count)
         </pre>
         This function will do exactly what you need: count how many times each
