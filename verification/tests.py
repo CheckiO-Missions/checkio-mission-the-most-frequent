@@ -21,7 +21,7 @@ TESTS = {
         {
             "input": [['a', 'a', 'bi', 'bi', 'bi']],
             "answer": 'bi'
-        }
+        },
     ],
     "Extra": [
         {
@@ -35,6 +35,6 @@ TESTS = {
         {
             "input": [['a', 'a', 'z']],
             "answer": 'a'
-        }
+        },
     ]
 }
