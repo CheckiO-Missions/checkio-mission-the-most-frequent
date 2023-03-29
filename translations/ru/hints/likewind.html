@@ -43,13 +43,19 @@ def most_frequent(data):
     </div>
     <div class="answer">
         Код для решения этой задачи вполне укладывается в однострочную функцию:
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data):
-    return max(data, key=lambda a: data.count(a))</pre>
+    return max(data, key=lambda a: data.count(a))
+        </pre>
+        </div>
         Которую можно записать даже проще:
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data):
-    return max(data, key=data.count)</pre>
+    return max(data, key=data.count)
+        </pre>
+        </div>
         Данная функция будет делать именно то, что нам нужно - считать, сколько раз каждый из элементов входит в исходный
         список (за это отвечает key=data.count), а затем сама функция max будет по этому параметру (по частоте) определять
         нужный нам элемент.
