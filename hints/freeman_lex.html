@@ -57,23 +57,28 @@ print(max(data))
         <p>
             Code that solves this task fits into a one-line function:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data: list[str]) -> str:
 
     return max(data, key=data.count)
         </pre>
+        </div>
         <p>
             This function will do exactly what you need: count how many times each element enters the input list (key=data.count is responsible for this), and then the max function itself will use this parameter (the frequency) to determine the required element.
         </p>
         <p>
             There are a lot of other solutions you be able to see after your solution passes all tests successfully. For example:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 from statistics import mode as most_frequent
         </pre>
+        </div>
         <p>
              Or the longer clear way by comparing frequencies in a loop:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data: list[str]) -> str:
 
@@ -85,6 +90,7 @@ def most_frequent(data: list[str]) -> str:
 
     return answer[1]
         </pre>
+        </div>
     </div>
 </div>    
 <div class="question-answer">
