@@ -57,11 +57,13 @@ print(max(data))
         <p>
             Код для розв'язку цієї місії поміщається в один рядок:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data: list[str]) -> str:
 
     return max(data, key=data.count)
         </pre>
+        </div>
         <p>
             Ця функція робить саме те, що тобі потрібно: рахує, скільки разів кожен елемент присутній у вхідному списку (key=data.count відповідальне за це), і потім сама функція max() використовує цей параметр (частоту) для визначення потрібного елемента.
         </p>
@@ -69,12 +71,15 @@ def most_frequent(data: list[str]) -> str:
             Є багато інших розв'язків, які ти зможеш побачити коли твій розв'язок
         успішно пройде всі тести. Наприклад:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 from statistics import mode as most_frequent
         </pre>
+        </div>
         <p>
             Або довша розгорнута версія через порівняння частот у циклі:
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def most_frequent(data: list[str]) -> str:
 
@@ -86,6 +91,7 @@ def most_frequent(data: list[str]) -> str:
 
     return answer[1]
         </pre>
+        </div>
     </div>
 </div>    
 <div class="question-answer">
