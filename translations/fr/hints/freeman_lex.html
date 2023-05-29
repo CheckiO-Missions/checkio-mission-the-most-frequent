@@ -1,0 +1,107 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je n'ai aucune idée de la manière de résoudre cette tâche.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 Vous devez trouver un élément dont l'un des paramètres est <b>maximal</b> (dans ce cas, il s'agit de la fréquence). Pour ce type de cas, Python dispose d'une excellente fonction intégrée <a target="_blank" href='https://docs.python.org/3/library/functions.html#max'>max()</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Comment cette fonction fonctionne-t-elle exactement? Pouvez-vous donner un exemple?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Supposons que vous disposiez d'une liste de nombres - [2, 7, 6, 14, -1, 10,5, -1, 5].
+        Si nous utilisons la fonction max, nous obtiendrons le nombre 14 - l'élément maximum
+        de la liste. Le code sera le suivant:
+        </p>
+        <pre class="brush: python">
+data = [2, 7, 6, 14, -1, 10.5, -1, 5]
+print(max(data))
+        </pre>
+        <div class="output">
+            <p>Sortie:</p>
+            <pre>
+14</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Mais je dois trouver l'élément ayant la fréquence maximale. Que dois-je faire dans ce cas?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Pour ce faire, vous devez utiliser le paramètre "key" dans la fonction "max", qui vous permet de trouver l'élément maximal non pas en fonction de la valeur absolue, mais, par exemple, en fonction de la fréquence. Dans ce cas, la méthode de la liste <a target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>count()</a> sera utile.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Puis-je voir la version complète du code?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Le code qui résout cette tâche tient dans une fonction d'une ligne:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    return max(data, key=data.count)
+        </pre>
+        </div>
+        <p>
+            Cette fonction fera exactement ce dont vous avez besoin: compter combien de fois chaque élément entre dans la liste d'entrée (key=data.count s'en charge), puis la fonction max elle-même utilisera ce paramètre (la fréquence) pour déterminer l'élément requis.
+        </p>
+        <p>
+            Il existe de nombreuses autres solutions que vous pourrez voir une fois que votre solution aura passé tous les tests avec succès. Par exemple, il existe de nombreuses autres solutions que vous pourrez voir une fois que votre solution aura passé tous les tests avec succès:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from statistics import mode as most_frequent
+        </pre>
+        </div>
+        <p>
+             Vous pouvez aussi utiliser une méthode plus longue et plus claire en comparant les fréquences dans une boucle:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    answer = 0, ''
+    for var in set(data):
+        freq = data.count(var)
+        if  freq > answer[0]:
+            answer = freq, var
+
+    return answer[1]
+        </pre>
+        </div>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Merci! Je comprends mieux maintenant. Tout fonctionne bien!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Heureux de l'apprendre!
+        </p>
+    </div>
+</div>
+</body>
