@@ -1,0 +1,107 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何解决这个问题。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 您需要找到一个元素，其参数之一是<b>maximal</b> (在本例中是频率)。对于这种情况，Python 有一个很好的内置<a target="_blank" href='https://docs.python.org/3/library/functions.html#max'>max()</a> 函数。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            这个函数是如何工作的？您能举个例子吗？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            假设您有一个数字列表 - [2, 7, 6, 14, -1, 10.5, -1, 5]。
+        如果我们使用max函数，我们将得到数字14--列表中最大的元素。
+        的最大值。代码如下
+        </p>
+        <pre class="brush: python">
+data = [2, 7, 6, 14, -1, 10.5, -1, 5]
+print(max(data))
+        </pre>
+        <div class="output">
+            <p>输出：</p>
+            <pre>
+14</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            但我需要找到频率最高的元素。在这种情况下我应该怎么做？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            为此，您需要在'max'函数中额外使用'key'参数，这样您就可以不通过绝对值，而是通过频率找到最大元素。在这种情况下，<a target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>list.count()</a> 方法将非常有用。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我能看看完整版的代码吗？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            解决此任务的代码只需一行函数：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    return max(data, key=data.count)
+        </pre>
+        </div>
+        <p>
+            该函数将完全满足您的需求：计算每个元素进入输入列表的次数（key=data.count负责），然后max函数本身将使用该参数（频率）来确定所需的元素。
+        </p>
+        <p>
+            在您的解决方案成功通过所有测试后，您还可以看到许多其他解决方案。例如
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from statistics import mode as most_frequent
+        </pre>
+        </div>
+        <p>
+             或者在一个循环中比较频率的更长的清晰方法：
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    answer = 0, ''
+    for var in set(data):
+        freq = data.count(var)
+        if  freq> answer[0]:
+            answer = freq, var
+
+    return answer[1]
+        </pre>
+        </div>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            谢谢！我现在知道并理解得更多了。一切正常！
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            很高兴听到这个消息！
+        </p>
+    </div>
+</div>
+</body>
