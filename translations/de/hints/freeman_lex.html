@@ -1,0 +1,107 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich diese Aufgabe lösen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 Sie müssen ein Element finden, bei dem einer der Parameter <b>maximal</b> ist (in diesem Fall ist es die Frequenz). Für diese Art von Fällen hat Python eine großartige eingebaute Funktion <a target="_blank" href='https://docs.python.org/3/library/functions.html#max'>max()</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie genau funktioniert diese Funktion? Können Sie ein Beispiel geben?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Nehmen wir an, Sie haben eine Liste von Zahlen - [2, 7, 6, 14, -1, 10,5, -1, 5].
+        Wenn wir die Funktion max verwenden, erhalten wir die Zahl 14 - das maximale Element
+        der Liste. Der Code sieht dann wie folgt aus:
+        </p>
+        <pre class="brush: python">
+data = [2, 7, 6, 14, -1, 10.5, -1, 5]
+print(max(data))
+        </pre>
+        <div class="output">
+            <p>Ausgabe:</p>
+            <pre>
+14</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Aber ich muss das Element mit der größten Häufigkeit finden. Was soll ich in diesem Fall tun?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Hierfür müssen Sie zusätzlich den Parameter 'key' innerhalb der Funktion 'max' verwenden, mit dem Sie das maximale Element nicht über den absoluten Wert, sondern beispielsweise über die Häufigkeit finden können. In diesem Fall ist die Methode <a target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists'>list.count()</a> nützlich.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Kann ich die vollständige Version des Codes sehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Der Code, der diese Aufgabe löst, passt in eine einzeilige Funktion:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    return max(data, key=data.count)
+        </pre>
+        </div>
+        <p>
+            Diese Funktion tut genau das, was Sie brauchen: Sie zählt, wie oft jedes Element in der Eingabeliste auftaucht (dafür ist key=data.count zuständig), und dann verwendet die max-Funktion selbst diesen Parameter (die Häufigkeit), um das gewünschte Element zu bestimmen.
+        </p>
+        <p>
+            Es gibt noch viele andere Lösungen, die Sie sehen können, nachdem Ihre Lösung alle Tests erfolgreich bestanden hat. Zum Beispiel:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from statistics import mode as most_frequent
+        </pre>
+        </div>
+        <p>
+             Oder der längere klare Weg durch den Vergleich von Frequenzen in einer Schleife:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def most_frequent(data: list[str]) -> str:
+
+    answer = 0, ''
+    for var in set(data):
+        freq = data.count(var)
+        if  freq> answer[0]:
+            answer = freq, var
+
+    return answer[1]
+        </pre>
+        </div>
+    </div>
+</div>    
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Danke! Ich weiß und verstehe jetzt mehr. Alles funktioniert bestens!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            👍 Freut mich zu hören!
+        </p>
+    </div>
+</div>
+</body>
